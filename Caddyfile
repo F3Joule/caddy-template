@@ -1,8 +1,11 @@
-:80 {
-  route /api/* {
-    uri strip_prefix /api
-    reverse_proxy localhost:3001
+rpc.subsocial.network {
+  @websocket {
+    header Connection *Upgrade*
+    header Upgrade    websocket
   }
 
-  reverse_proxy localhost:3000
+  @post method POST
+
+  reverse_proxy @websocket localhost:9944
+  reverse_proxy @post localhost:9933
 }
