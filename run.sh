@@ -5,6 +5,12 @@ pushd . > /dev/null
 
 cd "$(dirname ${BASH_SOURCE[0]})"
 
+export CADDYFILE_NAME="Caddyfile"
+if [[ $1 == "-f" && -n $2 ]]; then
+  CADDYFILE_NAME=$2
+  shift 2
+fi
+
 start_caddy(){
   docker-compose up $1
 }

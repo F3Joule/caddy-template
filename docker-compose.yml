@@ -6,7 +6,7 @@ services:
     restart: always
     network_mode: "host"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./$CADDYFILE_NAME:/etc/caddy/Caddyfile
       - caddy_data:/data
 
 volumes:
