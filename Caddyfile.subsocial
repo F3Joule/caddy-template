@@ -1,0 +1,40 @@
+app.subsocial.network {
+  route /offchain/* {
+    uri strip_prefix /offchain
+    reverse_proxy localhost:3001
+  }
+
+  route /ipfs/* {
+    uri strip_prefix /ipfs
+    reverse_proxy localhost:8080
+  }
+
+  route /elastic/* {
+    uri strip_prefix /elastic
+    reverse_proxy localhost:9200
+  }
+
+  route /notif-ws {
+    uri strip_prefix /notif-ws
+    reverse_proxy localhost:3011
+  }
+
+  # route /hydra/* {
+  #   uri strip_prefix /hydra
+  #   reverse_proxy localhost:4000
+  # }
+
+  # route /indexer/* {
+  #   uri strip_prefix /indexer
+  #   reverse_proxy localhost:4002
+  # }
+
+  # route /substrate {
+  #   uri strip_prefix /substrate
+  #   reverse_proxy localhost:9944
+  # }
+
+  respond /health-check 200
+
+  reverse_proxy localhost:3003
+}
