@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_certs:/root/.caddy
+      - caddy_data:/data
 
 volumes:
-  caddy_certs:
+  caddy_data:
