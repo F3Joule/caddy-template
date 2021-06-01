@@ -38,3 +38,7 @@ app.subsocial.network {
 
   reverse_proxy localhost:3003
 }
+
+docs.subsocial.network {
+  root * /docs
+}

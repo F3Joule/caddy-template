@@ -8,6 +8,7 @@ services:
     volumes:
       - ./$CADDYFILE_NAME:/etc/caddy/Caddyfile
       - caddy_data:/data
+      - ./subsocial-docs:/docs
 
 volumes:
   caddy_data:
