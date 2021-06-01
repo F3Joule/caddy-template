@@ -1,4 +1,4 @@
-app.subsocial.network {
+staging.subsocial.network {
   route /offchain/* {
     uri strip_prefix /offchain
     reverse_proxy localhost:3001
