@@ -1,11 +1,13 @@
 version: "3.2"
+
 services:
   caddy:
-    image: caddy/caddy
+    image: caddy:latest
     container_name: caddy-server
     restart: always
     network_mode: "host"
     volumes:
+      - ./certs:/certs
       - ./$CADDYFILE_NAME:/etc/caddy/Caddyfile
       - caddy_data:/data
 

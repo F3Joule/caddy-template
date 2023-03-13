@@ -1,4 +1,6 @@
-:80 {
+:443 {
+  tls /certs/cert.pem /certs/key.pem
+
   route /api/* {
     uri strip_prefix /api
     reverse_proxy localhost:3001
